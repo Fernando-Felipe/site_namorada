@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Para Você ❤️</title>
 
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffebf0;
+    font-family:Arial;
+    text-align:center;
+}
+
+#container{
+    position:relative;
+}
+
+h1{
+    font-size:40px;
+}
+
+button{
+    padding:15px 30px;
+    font-size:20px;
+    margin:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#sim{
+    background:#ff4d6d;
+    color:white;
+}
+
+#nao{
+    background:#444;
+    color:white;
+    position:absolute;
+}
+
+#resultado{
+    display:none;
+    margin-top:30px;
+}
+
+img{
+    width:300px;
+    border-radius:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="container">
+
+<h1>Você é a mulher mais maravilhosa do mundo ❤️<br><br>
+Quer continuar sendo minha para sempre?</h1>
+
+<button id="sim">Sim 💖</button>
+<button id="nao">Não</button>
+
+<div id="resultado">
+    <h2>Eu te amo! ❤️</h2>
+    <p>Esse é o seu presente</p>
+    <img src="foto.jpg">
+</div>
+
+</div>
+
+<script>
+
+const nao = document.getElementById("nao");
+
+nao.addEventListener("mouseover", () => {
+
+    const largura = window.innerWidth - 100;
+    const altura = window.innerHeight - 50;
+
+    const x = Math.random() * largura;
+    const y = Math.random() * altura;
+
+    nao.style.left = x + "px";
+    nao.style.top = y + "px";
+});
+
+document.getElementById("sim").onclick = function(){
+    document.getElementById("resultado").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
